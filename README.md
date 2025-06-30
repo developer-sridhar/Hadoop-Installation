@@ -6,7 +6,7 @@ Hello everyone, today we are going to to install Hadoop 3.3.0 on Windows 10.
 ## Prerequisites
 
 1. Java 8 runtime environment (JRE) 
-2. Apache Hadoop 3.3.0
+2. Apache Hadoop 3.4.1
 
 
 ### Step 1 - Download Hadoop binary package
@@ -138,6 +138,7 @@ If PATH environment exists in your system, you can also manually add the followi
 ```
 C:\Java\jdk-1.8\bin
 C:\hadoop\bin
+C:\hadoop\sbin
 ```
 
 
