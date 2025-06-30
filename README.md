@@ -99,7 +99,7 @@ Now we've downloaded and unpacked all the artefacts we need to configure two imp
 
 First you click the windows button and type environment
 
-![image-20230507121326401](image-20230507121326401.png)
+![image-20230507121326401](img/image-20230507121326401.png)
 
 
 
@@ -114,7 +114,7 @@ Variable value:  `C:\Java\jdk-1.8`
 
 
 
-![image-20230507121225400](image-20230507121225400.png)
+![image-20230507121225400](img/image-20230507121225400.png)
 
 the same with  **HADOOP_HOME** environment variable
 
@@ -123,7 +123,7 @@ Variable value:  `C:\hadoop`
 
 
 
-![image-20230507121111326](/image-20230507121111326.png)
+![image-20230507121111326](img/image-20230507121111326.png)
 
 
 
@@ -131,7 +131,7 @@ Variable value:  `C:\hadoop`
 
 Once we finish setting up the above two environment variables, we need to add the bin folders to the PATH environment variable. We click on Edit
 
-![image-20230507121941482](image-20230507121941482.png)
+![image-20230507121941482](img/image-20230507121941482.png)
 
 If PATH environment exists in your system, you can also manually add the following two paths to it:
 
@@ -143,7 +143,7 @@ C:\hadoop\sbin
 
 
 
-![image-20230507122647964](image-20230507122647964.png)
+![image-20230507122647964](img/image-20230507122647964.png)
 
 
 
@@ -168,12 +168,13 @@ You should also be able to run the following command:
 ```
 hadoop -version
 ```
-Hadoop 3.3.0
+Hadoop 3.4.1
 Source code repository https://gitbox.apache.org/repos/asf/hadoop.git -r aa96f1871bfd858f9bac59cf2a81ec470da649af
 Compiled by brahma on 2020-07-06T18:44Z
-Compiled with protoc 3.7.1
+Compiled with protoc 3.4.1
 From source with checksum 5dc29b802d6ccd77b262ef9d04d19c4
-This command was run using /C:/hadoop/share/hadoop/common/hadoop-common-3.3.0.jar
+This command was run using /C:/hadoop/share/hadoop/common/hadoop-common-3.4.1.jar
+
 ```
 java version "1.8.0_361"
 Java(TM) SE Runtime Environment (build 1.8.0_361-b09)
@@ -192,7 +193,7 @@ winutils.exe
 
 
 
-![image-20230507125319908](image-20230507125319908.png)
+![image-20230507125319908](img/image-20230507125319908.png)
 
 
 
@@ -293,7 +294,7 @@ Edit file **yarn-site.xml** in %HADOOP_HOME%\etc\hadoop folder.
 
 
 
-![image-20230507133653643](image-20230507133653643.png)
+![image-20230507133653643](img/image-20230507133653643.png)
 
 
 
@@ -307,7 +308,7 @@ hdfs namenode -format
 
 The following is an example when it is formatted successfully:
 
-![image-20230507133808803](image-20230507133808803.png)
+![image-20230507133808803](img/image-20230507133808803.png)
 
 ### Step 8 - Start HDFS daemons 
 
@@ -323,22 +324,22 @@ C:\hadoop\sbin>start-dfs.cmd
 
 Please click Allow access to the java.
 
-![image-20230507142854582](image-20230507142854582.png)
+![image-20230507142854582](img/image-20230507142854582.png)
 
 
 
 Two Command Prompt windows will open: one for datanode and another for namenode as the following screenshot shows:
 
-![image-20230507134058063](image-20230507134058063.png)
+![image-20230507134058063](img/image-20230507134058063.png)
 
 Verify HDFS web portal UI through this link: http://localhost:9870/dfshealth.html#tab-overview.
 
 
 You can also navigate to a data node UI:
 
-![image-20230507134126706](image-20230507134126706.png)
+![image-20230507134126706](img/image-20230507134126706.png)
 
-![image-20230507134148506](image-20230507134148506.png)
+![image-20230507134148506](img/image-20230507134148506.png)
 
 ### Step 9 - Start YARN daemons
 
@@ -352,11 +353,11 @@ start-yarn.cmd
 
 Similarly two Command Prompt windows will open: one for resource manager and another for node manager as the following screenshot shows:
 
-![](image-202305071341485061.png)
+![](img/image-202305071341485061.png)
 
 
 You can verify YARN resource manager UI when all services are started successfully. 
 
 http://localhost:8088
 
-![](image-20230508.jpg)
+![](img/image-20230508.jpg)
