@@ -85,12 +85,13 @@ git clone https://github.com/ruslanmv/How-to-install-Hadoop-on-Windows.git
 
 and then copy
 
+How-to-install-Hadoop-on-Windows --> winutils --> hadoop-3.4.0-win10-x64 --> bin (copy)
+
 ```
-cd How-to-install-Hadoop-on-Windows\winutils\hadoop-3.3.0-YARN-8246\bin
 copy *.*  C:\Hadoop\hadoop-3.3.0\bin
 ```
-
-
+Delete existing bin
+paste the copied bin
 
 
 ## Step 5 - Configure environment variables
