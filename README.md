@@ -31,13 +31,11 @@ Because I am installing Hadoop in folder Haddop  of my C drive (C:\Hadoop)
 we create the the directory
 
 ```
-mkdir C:\Hadoop
+C:\hadoop 3.4.1
 ```
-
-then run the following command to unzip:
-
+Rename
 ```
-tar -xvzf  hadoop-3.3.0.tar.gz -C C:\Hadoop\
+C:\hadoop
 ```
 
 The command will take quite a few minutes as there are numerous files included and the latest version introduced many new features.
@@ -59,18 +57,11 @@ cd Downloads
 
 Because I am installing Java in folder Java of my C drive (C:\Java) 
 
-we create the the directory
+we create the folder from Localdisk:C
 
 ```
-mkdir C:\Java
+C:\Java
 ```
-
-then run the following command to unzip:
-
-```
-tar -xvzf  jre-8u361-windows-x64.tar.gz -C C:\Java\
-```
-
 
 
 
@@ -119,7 +110,7 @@ We configure **JAVA_HOME** environment variable
 by adding new  environment variable.
 
 Variable name : `JAVA_HOME`
-Variable value:  `C:\Java\jre1.8.0_361`
+Variable value:  `C:\Java\jdk-1.8`
 
 
 
@@ -128,7 +119,7 @@ Variable value:  `C:\Java\jre1.8.0_361`
 the same with  **HADOOP_HOME** environment variable
 
 Variable name : `HADOOP_HOME`
-Variable value:  `C:\Hadoop\hadoop-3.3.0`
+Variable value:  `C:\hadoop`
 
 
 
@@ -145,8 +136,8 @@ Once we finish setting up the above two environment variables, we need to add th
 If PATH environment exists in your system, you can also manually add the following two paths to it:
 
 ```
-%JAVA_HOME%/bin
-%HADOOP_HOME%/bin
+C:\Java\jdk-1.8\bin
+C:\hadoop\bin
 ```
 
 
@@ -176,7 +167,12 @@ You should also be able to run the following command:
 ```
 hadoop -version
 ```
-
+Hadoop 3.3.0
+Source code repository https://gitbox.apache.org/repos/asf/hadoop.git -r aa96f1871bfd858f9bac59cf2a81ec470da649af
+Compiled by brahma on 2020-07-06T18:44Z
+Compiled with protoc 3.7.1
+From source with checksum 5dc29b802d6ccd77b262ef9d04d19c4
+This command was run using /C:/hadoop/share/hadoop/common/hadoop-common-3.3.0.jar
 ```
 java version "1.8.0_361"
 Java(TM) SE Runtime Environment (build 1.8.0_361-b09)
@@ -217,7 +213,7 @@ Replace configuration element with the following:
 <configuration>
    <property>
      <name>fs.default.name</name>
-     <value>hdfs://0.0.0.0:19000</value>
+     <value>hdfs://localhost:9000</value>
    </property>
 </configuration>
 ```
@@ -249,11 +245,11 @@ Replace configuration element with the following (remember to replace the highli
    </property>
    <property>
      <name>dfs.namenode.name.dir</name>
-     <value>/hadoop/hadoop-3.3.0/data/namenode</value>
+     <value>C:\hadoop\data\namenode</value>
    </property>
    <property>
      <name>dfs.datanode.data.dir</name>
-     <value>/hadoop/hadoop-3.3.0/data/datanode</value>
+     <value>C:\hadoop\data\datanode</value>
    </property>
 </configuration>
 ```
@@ -302,7 +298,7 @@ Edit file **yarn-site.xml** in %HADOOP_HOME%\etc\hadoop folder.
 
 ### Step 7 - Initialise HDFS 
 
-Run the following command in Command Prompt 
+Run the following command in Command Prompt run as administrator
 
 ```
 hdfs namenode -format
@@ -315,9 +311,13 @@ The following is an example when it is formatted successfully:
 ### Step 8 - Start HDFS daemons 
 
 Run the following command to start HDFS daemons in Command Prompt:
-
+*C:\hadoop\bin>*
 ```
-%HADOOP_HOME%\sbin\start-dfs.cmd
+hdfs namenode -format
+```
+*C:\hadoop\sbin>*
+```
+C:\hadoop\sbin>start-dfs.cmd
 ```
 
 Please click Allow access to the java.
@@ -346,7 +346,7 @@ warning You may encounter permission issues if you start YARN daemons using norm
 Run the following command in an elevated Command Prompt window (Run as administrator) to start YARN daemons:
 
 ```
-%HADOOP_HOME%\sbin\start-yarn.cmd
+start-yarn.cmd
 ```
 
 Similarly two Command Prompt windows will open: one for resource manager and another for node manager as the following screenshot shows:
